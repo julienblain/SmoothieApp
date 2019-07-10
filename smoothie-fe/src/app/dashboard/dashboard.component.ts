@@ -24,5 +24,8 @@ export class DashboardComponent implements OnInit {
   set subTitle(nTitle: string){
     this._subTitle = nTitle;
   }
+  get subTitle(): string {
+    return this._subTitle;
+  }
 
 }
