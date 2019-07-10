@@ -7,15 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
   title: string;
+  private _subTitle;
   constructor() {
-    this.setTitle();
+    
   }
 
   ngOnInit() { //life cirle hook, se fair à la signature
+    this.setTitle();
   }
 
   setTitle(): void {
     this.title = 'Bienvenue sur Smoothie en folie';
+    this.subTitle = ('La référence pour vos recettes de Smoothie');
+  }
+
+  set subTitle(nTitle: string){
+    this._subTitle = nTitle;
   }
 
 }
