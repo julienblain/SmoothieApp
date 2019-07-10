@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({ //decorateur design patern, ca cree une balise html
   selector: 'app-dashboard',
@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  @Input() smoothie: string;
+
   title: string;
-  private _subTitle;
+  private _subTitle: string;
+  
   constructor() {
     
   }
