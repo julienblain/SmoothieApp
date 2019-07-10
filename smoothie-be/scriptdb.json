@@ -1,0 +1,115 @@
+[
+    {
+        "title": "Smoothie à la fraise",
+        "ingredients": [
+            {
+                "nom": "Fraises",
+                "quantite": "75g"
+            },
+            {
+                "name": "Eau",
+                "quantite" : "20ml" 
+            }
+        ],
+        "features": {
+            "cost": "1 euro",
+            "prepareTime": "5 minutes"
+        },
+        "advice": "Utiliser les fraises mûres. Ajouter 2 ou 3 feuilles de menthe pour le côté frais",
+        "description":"Super smoothie rafaraîchissant, prêt en quelques minutes",
+        "steps": [
+        {
+            "stepText": "Lavez les fraises à l'eau claire"
+        },
+        {
+            "stepText": "Eliminer le pédoncule avec un couteau pointu"
+        },
+        {
+            "stepText": "Placer les fraises dans le bol du mixer avec la menthe selon votre goût"
+        },
+        {
+            "stepText": "Ajouter l'eau"
+        },
+        {
+            "stepText": "Mixer"
+        }
+        ]
+    },
+    {
+        "title": "Smoothie à la mangue",
+        "ingredients": [
+            {
+                "nom": "mangue",
+                "quantite": "1 pièce"
+            },
+            {
+                "name": "Eau",
+                "quantite" : "30ml" 
+            }
+        ],
+        "features": {
+            "cost": "5 euro",
+            "prepareTime": "5 minutes"
+        },
+        "advice": "Utiliser une mangue par avion. Vous pouvez ajouter une demin gousse de vanille dans la préparation",
+        "description":"Description smoothie mangue",
+        "steps": [
+        {
+            "stepText": "Lavez la mangue"
+        },
+        {
+            "stepText": "Peler la mangue"
+        },
+        {
+            "stepText": "Placer la mangue dans le bol du mixer avec quelques fèves de cacao"
+        },
+        {
+            "stepText": "Ajouter l'eau"
+        },
+        {
+            "stepText": "Mixer"
+        }
+        ]
+    },
+    {
+        "title": "Smoothie café-avoine",
+        "ingredients": [
+            {
+                "nom": "café",
+                "quantite": "20cl"
+            },
+            {
+                "name": "avoine",
+                "quantite" : "30g" 
+            },
+            {
+                "name": "banane",
+                "quantite" : "1 pièce" 
+            }
+            
+        ],
+        "features": {
+            "cost": "2 euro",
+            "prepareTime": "2 minutes"
+        },
+        "advice": "Vous pouvez ajouter un peu de beurre de cacahuète",
+        "description":"Smoothie banane café avoine",
+        "steps": [
+        {
+            "stepText": "Faire une tasse de café"
+        },
+        {
+            "stepText": "Peler la banane"
+        },
+        {
+            "stepText": "Placer le café et l'avoine dans le bol du mixer"
+        },
+        {
+            "stepText": "Couper la banane et ajouter là au bol"
+        },
+        {
+            "stepText": "Mixer"
+        }
+        ]
+    }
+]
