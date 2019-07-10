@@ -6,15 +6,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [
+  declarations: [ //only component
     AppComponent,
     DashboardComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, //first already
     AppRoutingModule
   ],
-  providers: [],
+  providers: [],  //already servie
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { }  //module qu'on souhaite rendre dispo pour le reste de l'appli
