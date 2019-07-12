@@ -39,13 +39,10 @@ const smoothieSchema = mongoose.Schema({
             }, 
         },
     ], 
-    photo:[
-        {
-            titre:String,
-            path:String,
-            description:String,
-        }
-    ],
+    photo: {
+        type:String,
+        required:false,
+    }
 });
 
 //smoothie est une sorte d'alias de catalog (il aurait fallu appeler la collection smoothies)

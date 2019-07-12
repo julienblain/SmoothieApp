@@ -7,6 +7,7 @@ var router = express.Router();
 router.get('/list', async (req, res, next) => {
     try {
         const smoothies = await Smoothie.find({});
+        console.log(smoothies);
         res.send(smoothies);
     }
     catch {

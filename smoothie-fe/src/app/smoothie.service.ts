@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import {environment } from '../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 export interface Smoothie {
-  _id: string;
+  _id?: string;        // ? permet que la propriété ne soit pas obligatoire 
   title: string;
   ingredients: [
     {
@@ -12,23 +13,17 @@ export interface Smoothie {
       quantité: string;
     }];
   features: {
-    eTcost: string;
-    preparime: string;
+    cost?: string;
+    prepareTime: string;
   };
-  advice: string;
+  advice?: string;
   description: string;
   steps: [
     {
         stepText: string;
     }
   ];
-  photo:[
-    {
-      titre: string;
-      path: string;
-      description: string;
-    }
-  ];
+  photo?: string;
 }
 
 @Injectable({
@@ -36,10 +31,23 @@ export interface Smoothie {
 })
 export class SmoothieService {
 
-  private apiUtl = environment.apiUrl;
+  private apiUrl = environment.apiUrl;
 
   constructor(
-    private htpp:HttpClient,
-    private router:Router
+    private http: HttpClient,
+    private router: Router
   ) {}
+
+ // Get all Smoothie
+  getSmoothies(): Observable<Smoothie[]> {        // le retour sera de type obsevable
+    const smoothieListUrl = `${this.apiUrl}/catalog/list`;
+    
+    return this.http.get<Smoothie[]>(smoothieListUrl);
+  }
+
+  getOneSmoothie(id: String): Observable<Smoothie> {
+    const getUrl = `${this.apiUrl}/catalog/${id}`;
+    
+    return this.http.get<Smoothie>(getUrl);
+  }
 }
