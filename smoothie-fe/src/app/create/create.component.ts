@@ -11,8 +11,32 @@ import { Router } from '@angular/router';
 export class CreateComponent implements OnInit {
 
   smoothie: Smoothie = {
-    title : ''
-  }
+    title: '',
+    ingredients: [
+      {
+        nom: '',
+        quantite: '',
+      }
+      ],
+    features: {
+      cost: '',
+      prepareTime: '',
+    },
+    advice: '',
+    description: '',
+    steps: [
+      {
+        stepText: '',
+      }
+      ],
+    photo: [
+      {
+        title: '',
+        path: '',
+        description: '',
+      }
+      ]
+    };
 
   //on cree me frpùGoup
   smoothieForm: FormGroup;
