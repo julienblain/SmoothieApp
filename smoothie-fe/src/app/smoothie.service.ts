@@ -7,18 +7,18 @@ import { Observable } from 'rxjs';
 export interface Smoothie {
   _id?: string;        // ? permet que la propriété ne soit pas obligatoire 
   title: string;
-  ingredients: [
+  ingredients?: [
     {
-      nom: string;
-      quantité: string;
+      nom?: string;
+      quantité?: string;
     }];
-  features: {
+  features?: {
     cost?: string;
-    prepareTime: string;
+    prepareTime?: string;
   };
   advice?: string;
-  description: string;
-  steps: [
+  description?: string;
+  steps?: [
     {
         stepText: string;
     }
@@ -49,5 +49,9 @@ export class SmoothieService {
     const getUrl = `${this.apiUrl}/catalog/${id}`;
     
     return this.http.get<Smoothie>(getUrl);
+  }
+
+  addSmoothie(): void {
+    //this.http.post
   }
 }

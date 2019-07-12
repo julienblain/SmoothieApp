@@ -1,0 +1,22 @@
+<div>
+    <!-- form group du component -->
+    <form [formGroup]="smoothieForm" (ngSubmit)="onSubmit()" >
+        <div class="content p-24">
+
+            <!-- name: Le nom du groupe matInput apporte d fonctionnalité, formControl est le title du fb group -->
+            <mat-form-field class="full-width">
+                <input matInput
+                        placeholder="Titre de la recette" 
+                        formControlName="title"
+                />
+                <mat-error *ngIf="myForm.title.hasError('required')" >
+                Le titre est obligatoire
+                </mat-error>
+            </mat-form-field>
+
+            <div class="p-8 pt-0" fxLayout="row" fxLayoutAlign="center center">
+                <button mat-stroked-button color="primary">Créer</button>
+            </div>
+        </div>
+    </form>
+</div>

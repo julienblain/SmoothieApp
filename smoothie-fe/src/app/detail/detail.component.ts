@@ -10,6 +10,7 @@ import { SmoothieService, Smoothie } from '../smoothie.service';
 export class DetailComponent implements OnInit {
   private smoothie: Smoothie;
   private smoothieId;
+  private urlImg = "http://localhost:3000/";
 
   constructor(private route: ActivatedRoute, private smoothieService: SmoothieService) {
     

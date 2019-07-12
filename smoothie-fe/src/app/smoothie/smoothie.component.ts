@@ -9,6 +9,7 @@ import { SmoothieService, Smoothie } from '../smoothie.service';
 export class SmoothieComponent implements OnInit {
 
   private _smoothies: Smoothie[];
+  private urlImg = "http://localhost:3000/";
   
   constructor(private smoothieService: SmoothieService) {
     this.getAllSmoothies();

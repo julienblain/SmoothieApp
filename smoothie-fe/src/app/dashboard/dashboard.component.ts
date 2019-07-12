@@ -10,7 +10,8 @@ export class DashboardComponent implements OnInit {
   @Input() smoothie: string;
 
   private _smoothies: Smoothie[];   //return de l'interface, carton vide
-  public imgBaseUrl: "http://localhost:3000/";
+  private urlImg = "http://localhost:3000/";
+  private urlApp = "http://localhost:4200/";
  // title: string;
 // tslint:disable-next-line: variable-name
  // private _subTitle: string;
