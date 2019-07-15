@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validator, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validator, FormControl, Validators, FormArray } from '@angular/forms';
 import { Smoothie, SmoothieService } from '../smoothie.service';
 import { Router } from '@angular/router';
 
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-
+  
   smoothie: Smoothie = {
     title: '',
     ingredients: [
@@ -87,4 +87,5 @@ export class CreateComponent implements OnInit {
         console.log('smoothie inséré', lastInsertSmoothie);
       });
   }
+  
 }

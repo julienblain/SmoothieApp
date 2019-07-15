@@ -1,0 +1,21 @@
+<p>ici</p>
+<p>{{in}}</p>
+ <mat-form-field class="full-width" *ngFor="let container of containers">
+    <input matInput
+            placeholder="nom de l'ingrédient" 
+            formControlName="ingredientName"
+           
+    />
+    <mat-error *ngIf="myForm.ingredientName.hasError('required')" >
+    Ajouter un ingrédient.
+    </mat-error>
+</mat-form-field>
+<div class="p-8 pt-0" fxLayout="row" fxLayoutAlign="center center">
+    <button type="button" mat-stroked-button color="primary" (click)="add()">Ajouter un ingrédient</button>
+</div>
+<!--
+<div id="content">
+    <div id="contentInside" *ngFor="let container of containers"></div>
+    <button (click)="add()">Add</button>
+  </div>
+  -->
