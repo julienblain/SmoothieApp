@@ -10,7 +10,7 @@ export interface Smoothie {
   ingredients?: [
     {
       nom?: string;
-      quantité?: string;
+      quantity?: string;
     }];
   features?: {
     cost?: string;
@@ -50,8 +50,11 @@ export class SmoothieService {
   }
 
   addSmoothie(smoothie: Smoothie) {
+   
     const addUrl = `${this.apiUrl}/catalog/add`;
     return this.http.post<Smoothie>(addUrl, smoothie);
   }
+
+  
 
 }

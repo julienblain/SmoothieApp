@@ -11,11 +11,11 @@ import { Router } from '@angular/router';
 export class CreateComponent implements OnInit {
 
   smoothie: Smoothie = {
-    title: '',/*
+    title: '',
     ingredients: [
       {
         nom: '',
-        quantité: '',
+        quantity: '',
       }
       ],
     features: {
@@ -29,34 +29,17 @@ export class CreateComponent implements OnInit {
         stepText: '',
       }
       ],
-    photo: [
-      {
-        title: '',
-        path: '',
-        description: '',
-      }
-      ]*/
+    photo: '',
     };
 
-  //on cree me frpùGoup
+  // on cree me frpùGoup
   smoothieForm: FormGroup;
- /*
-  profileForm = this.fb.group({
-    firstName: [''],
-    lastName: [''],
-    address: this.fb.group({
-      street: [''],
-      city: [''],
-      state: [''],
-      zip: [''],
-    }),
-  });*/
-
-   //importe le formBuilder
+ 
+   // importe le formBuilder
   constructor(private fb: FormBuilder, private smoothieService: SmoothieService) { }
 
   ngOnInit() {
-    //on init le form
+    // on init le form
     this.buildForm();
   }
 
@@ -64,12 +47,20 @@ export class CreateComponent implements OnInit {
     return this.smoothieForm.controls;
   }
 
-    //build le form
+    // build le form with front validators
   private buildForm() {
     this.smoothieForm = this.fb.group({
       hideRequired: false,
       floatLabel: 'auto',
-      title: ['', /*Validators.required*/], //input
+      title: ['', Validators.required], // input, le retirer pour test le validator be
+      cost: ['', Validators.required],
+      prepareTime: ['', Validators.required],
+      ingredientName: ['', Validators.required],
+      ingredientQuantity: ['', Validators.required],
+      advice: ['', Validators.required],
+      description: ['', Validators.required],
+      step: ['', Validators.required],
+      photo: ['']
     });
   }
 
@@ -79,8 +70,14 @@ export class CreateComponent implements OnInit {
       return;
     } else {
       this.smoothie.title = this.myForm.title.value;
+      this.smoothie.features.cost = this.myForm.cost.value;
+      this.smoothie.features.prepareTime = this.myForm.prepareTime.value;
+      this.smoothie.ingredients[0].nom = this.myForm.ingredientName.value;
+      this.smoothie.ingredients[0].quantity = this.myForm.ingredientQuantity.value;
+      this.smoothie.advice = this.myForm.advice.value;
+      this.smoothie.description = this.myForm.description.value;
+      this.smoothie.steps[0].stepText = this.myForm.step.value;
       this.addSmoothie(this.smoothie);
-      // console.log(this.smoothie);
     }
   }
 
@@ -90,39 +87,4 @@ export class CreateComponent implements OnInit {
         console.log('smoothie inséré', lastInsertSmoothie);
       });
   }
-
-
-
-
-
-
-
-
-
-
-
-/*
-  initForm() {
-    
-      this.smoothieForm = this.fb.group({
-        title: '' 
-        lastName: '',
-        email: '',
-        drinkPreference: ''
-      });
-  
-  }
-
-  onSubmitForm() {
-    const formValue = this.smoothieForm.value;
-    const newSmoothie = new Smoothie(
-      formValue['title']
-     );
-
-   let truc = this.smoothieService.addSmoothie(newSmoothie);
-   console.log(truc);
-
-    //this.router.navigate(['/users']);
-  }
-*/
 }

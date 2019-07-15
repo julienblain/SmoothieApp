@@ -1,8 +1,7 @@
 var express = require('express');
 const Smoothie = require('../models/smoothie');
 
-//telecharge check pour test, bug 
-
+//telecharge express-validatoir pour test, (desactiver le validator front)
 const {
     check,
     validationResult
@@ -40,7 +39,7 @@ router.post('/add', [
         check('title').not().isEmpty().withMessage("Le nom ne peut être vide"),
     ], async (req, res, next) => {
 
-         const errors = validationResult(req);
+    const errors = validationResult(req);
     if (!errors.isEmpty()) {
         console.log(errors);
         res.status(400).send({
@@ -49,7 +48,14 @@ router.post('/add', [
         return;
     }
     let newSmoothie = new Smoothie();
+    console.log(req.body)
     newSmoothie.title = req.body.title;
+    newSmoothie.features = req.body.features;
+    newSmoothie.ingredients = req.body.ingredients;
+    newSmoothie.advice = req.body.advice;
+    newSmoothie.description = req.body.description;
+    newSmoothie.steps = req.body.steps;
+    newSmoothie.photo = req.body.photo;
 
     try {
         const smoothie = await newSmoothie.save(); //enregistre en bdd

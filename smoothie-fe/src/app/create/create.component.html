@@ -14,6 +14,80 @@
                 </mat-error>
             </mat-form-field>
 
+            <mat-form-field class="full-width">
+                <input matInput
+                        placeholder="Coût" 
+                        formControlName="cost"
+                />
+                <mat-error *ngIf="myForm.cost.hasError('required')" >
+                Le coût est obligatoire
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input matInput
+                        placeholder="Temps de préparation" 
+                        formControlName="prepareTime"
+                />
+                <mat-error *ngIf="myForm.prepareTime.hasError('required')" >
+                Le temps de préparation est obligatoire
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput
+                        placeholder="nom de l'ingrédient" 
+                        formControlName="ingredientName"
+                />
+                <mat-error *ngIf="myForm.ingredientName.hasError('required')" >
+                Au moins un ingrédient est obligatoire
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput
+                        placeholder="quantité de l'ingrédient" 
+                        formControlName="ingredientQuantity"
+                />
+                <mat-error *ngIf="myForm.ingredientQuantity.hasError('required')" >
+                Il faut la quantité de l'ingrédient
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input matInput
+                        placeholder="Phrase d'accroche" 
+                        formControlName="advice"
+                />
+                <mat-error *ngIf="myForm.advice.hasError('required')" >
+                Une accroche est obligatoire
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input matInput
+                        placeholder="Description" 
+                        formControlName="description"
+                />
+                <mat-error *ngIf="myForm.description.hasError('required')" >
+                Une description est obligatoire
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input matInput
+                        placeholder="Etapes" 
+                        formControlName="step"
+                />
+                <mat-error *ngIf="myForm.step.hasError('required')" >
+                Le déroulement de la recette est obligatoire
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input matInput
+                        placeholder="Url de photo" 
+                        formControlName="photo"
+                />
+            </mat-form-field>
+            
+            
+
             <div class="p-8 pt-0" fxLayout="row" fxLayoutAlign="center center">
                 <button mat-stroked-button color="primary">Créer</button>
             </div>

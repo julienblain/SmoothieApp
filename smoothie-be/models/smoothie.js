@@ -10,7 +10,7 @@ const smoothieSchema = mongoose.Schema({
                 type:String,
                 required:false,
             },
-            quantité:{
+            quantity:{
                 type:String,
                 required:false,
             },
@@ -28,20 +28,22 @@ const smoothieSchema = mongoose.Schema({
     },
     advice:{
         type:String,
+        required:false
     },
     description:{
         type:String,
+        required:false
     },
     steps:[
         {
             stepText:{
                 type:String,
+                required:false
             }, 
         },
     ], 
     photo: {
-        type:String,
-        required:false,
+        type:String
     }
 });
 
