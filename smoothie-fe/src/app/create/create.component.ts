@@ -69,7 +69,7 @@ export class CreateComponent implements OnInit {
     this.smoothieForm = this.fb.group({
       hideRequired: false,
       floatLabel: 'auto',
-      title: ['', Validators.required], //input
+      title: ['', /*Validators.required*/], //input
     });
   }
 
@@ -85,7 +85,6 @@ export class CreateComponent implements OnInit {
   }
 
   addSmoothie(smoothie: Smoothie) {
-    console.log(this.smoothieService);
     this.smoothieService.addSmoothie(smoothie)
       .subscribe( (lastInsertSmoothie) => {
         console.log('smoothie inséré', lastInsertSmoothie);

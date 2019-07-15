@@ -1,6 +1,13 @@
 var express = require('express');
 const Smoothie = require('../models/smoothie');
 
+//telecharge check pour test, bug 
+
+const {
+    check,
+    validationResult
+} = require('express-validator'); 
+
 var router = express.Router();
 
 /* GET users listing. */
@@ -29,8 +36,18 @@ router.get('/:id', async (req, res, next) => {
     }
 });
 
-router.post('/add', async (req, res, next) => {
+router.post('/add', [
+        check('title').not().isEmpty().withMessage("Le nom ne peut être vide"),
+    ], async (req, res, next) => {
 
+         const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        console.log(errors);
+        res.status(400).send({
+            errors: errors.array()
+        });
+        return;
+    }
     let newSmoothie = new Smoothie();
     newSmoothie.title = req.body.title;
 
