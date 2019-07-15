@@ -41,17 +41,17 @@ export class SmoothieService {
  // Get all Smoothie
   getSmoothies(): Observable<Smoothie[]> {        // le retour sera de type obsevable
     const smoothieListUrl = `${this.apiUrl}/catalog/list`;
-    
     return this.http.get<Smoothie[]>(smoothieListUrl);
   }
 
   getOneSmoothie(id: String): Observable<Smoothie> {
     const getUrl = `${this.apiUrl}/catalog/${id}`;
-    
     return this.http.get<Smoothie>(getUrl);
   }
 
-  addSmoothie(): void {
-    //this.http.post
+  addSmoothie(smoothie: Smoothie) {
+    const addUrl = `${this.apiUrl}/catalog/add`;
+    return this.http.post<Smoothie>(addUrl, smoothie);
   }
+
 }

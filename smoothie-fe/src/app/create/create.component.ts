@@ -11,11 +11,11 @@ import { Router } from '@angular/router';
 export class CreateComponent implements OnInit {
 
   smoothie: Smoothie = {
-    title: '',
+    title: '',/*
     ingredients: [
       {
         nom: '',
-        quantite: '',
+        quantité: '',
       }
       ],
     features: {
@@ -35,26 +35,25 @@ export class CreateComponent implements OnInit {
         path: '',
         description: '',
       }
-      ]
+      ]*/
     };
 
   //on cree me frpùGoup
   smoothieForm: FormGroup;
  /*
   profileForm = this.fb.group({
-    firstName: [''] 
+    firstName: [''],
     lastName: [''],
     address: this.fb.group({
       street: [''],
       city: [''],
       state: [''],
-      zip: [''] 
+      zip: [''],
     }),
   });*/
 
    //importe le formBuilder
-  constructor(private fb: FormBuilder, private smoothieService: SmoothieService
-             ) { }
+  constructor(private fb: FormBuilder, private smoothieService: SmoothieService) { }
 
   ngOnInit() {
     //on init le form
@@ -86,6 +85,7 @@ export class CreateComponent implements OnInit {
   }
 
   addSmoothie(smoothie: Smoothie) {
+    console.log(this.smoothieService);
     this.smoothieService.addSmoothie(smoothie)
       .subscribe( (lastInsertSmoothie) => {
         console.log('smoothie inséré', lastInsertSmoothie);
